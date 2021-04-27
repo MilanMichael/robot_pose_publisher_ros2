@@ -30,7 +30,11 @@ public:
 	{
 		tf_buffer_ = std::make_shared<tf2_ros::Buffer>(this->get_clock());
 		tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
-		
+
+		this->declare_parameter<std::string>("map_frame","map");
+		this->declare_parameter<std::string>("base_frame","base_link");
+		this->declare_parameter<bool>("is_stamped",false);
+
 		this->get_parameter("map_frame", map_frame);
 		this->get_parameter("base_frame", base_frame);
 		this->get_parameter("is_stamped", is_stamped);

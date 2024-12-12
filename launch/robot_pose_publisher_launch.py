@@ -5,8 +5,8 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package="robot_pose_publisher_ros2",
-            node_executable="robot_pose_publisher",
-            node_name="robot_pose_publisher",
+            executable="robot_pose_publisher",
+            name="robot_pose_publisher",
             output="screen",
             emulate_tty=True,
             parameters=[
